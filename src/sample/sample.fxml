@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+
+<BorderPane fx:id="root" prefHeight="385.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Drawing">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar prefHeight="20.0" prefWidth="480.0">
+               <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Edit">
+                     <items>
+                        <MenuItem fx:id="undoButton" mnemonicParsing="false" onAction="#undoDraw" text="Undo" />
+                        <MenuItem fx:id="redoButton" mnemonicParsing="false" onAction="#redoDraw" text="Redo" />
+                        <MenuItem fx:id="cornerDeleteButton" mnemonicParsing="false" onAction="#deleteCorner" text="Delete" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+              <items>
+                  <ColorPicker fx:id="colorPicker" onAction="#changeColor">
+                     <value>
+                        <Color red="0.5600000023841858" green="0.8031578660011292" blue="0.8842105269432068" />
+                     </value>
+                  </ColorPicker>
+              </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+   </left>
+</BorderPane>
